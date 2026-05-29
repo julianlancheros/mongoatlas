@@ -260,9 +260,13 @@ include "index.html";
                             <?php foreach ($documentos as $doc): ?>
                             <tr>
                                 <td><?= htmlspecialchars(substr($doc['_id'], -8)) ?></td>
-                                <td><?= htmlspecialchars($doc['nombre'] ?? $doc['contacto'] ?? 'N/A') ?></td>
-                                <td><?= htmlspecialchars($doc['gusto'] ?? $doc['tipo_fallo'] ?? 'General') ?></td>
-                                <td><?= htmlspecialchars(substr($doc['descripcion'] ?? $doc['gusto'] ?? 'Sin descripción', 0, 50)) ?></td>
+                                <td><?= htmlspecialchars(substr($doc['_id'], -8)) ?></td>
+                                <td><?= htmlspecialchars($doc['apellidos'] ?? 'N/A') ?></td>
+                                <td><?= htmlspecialchars($doc['nombres'] ?? 'N/A') ?></td>
+                                <td><?= htmlspecialchars($doc['Color'] ?? 'N/A') ?></td>
+                                <td><?= htmlspecialchars($doc['comida'] ?? 'N/A') ?></td>
+                                <td><?= htmlspecialchars($doc['Película'] ?? 'N/A') ?></td>
+                            
                                 <td><?= htmlspecialchars($doc['fecha'] ?? date('Y-m-d')) ?></td>
                             </tr>
                             <?php endforeach; ?>

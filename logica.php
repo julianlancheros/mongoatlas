@@ -20,6 +20,8 @@ require 'vendor/autoload.php'; // Cargar Composer
     
 include "index.html";
 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -49,9 +49,11 @@ include "index.html";
             <?php foreach ($documentos as $doc): ?>
             <tr>
                 <td><?= $doc['_id'] ?></td>
-                <td><?= $doc['nombre'] ?? 'N/A' ?></td>
-                <td><?= $doc['gusto'] ?? 'N/A' ?></td>
-                <td><?= $doc['fecha'] ?? 'N/A' ?></td>
+                <td><?= $doc['Apellidos'] ?? 'N/A' ?></td>
+                <td><?= $doc['Nombres'] ?? 'N/A' ?></td>
+                <td><?= $doc['Color favorito'] ?? 'N/A' ?></td>
+                <td><?= $doc['Comida favorita'] ?? 'N/A' ?></td>
+                <td><?= $doc['Tipo de literatura y cine'] ?? 'N/A' ?></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

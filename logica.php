@@ -21,3 +21,42 @@ require 'vendor/autoload.php'; // Cargar Composer
 include "index.html";
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Documentos</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Listado de Documentos - Colección "Gustos"</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Gusto</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($documentos as $doc): ?>
+            <tr>
+                <td><?= $doc['_id'] ?></td>
+                <td><?= $doc['nombre'] ?? 'N/A' ?></td>
+                <td><?= $doc['gusto'] ?? 'N/A' ?></td>
+                <td><?= $doc['fecha'] ?? 'N/A' ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <p>Total de documentos: <?= $coleccion->countDocuments([]) ?></p>
+</body>
+</html>

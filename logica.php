@@ -26,39 +26,28 @@ include "index.html";
 <html>
 <head>
     <title>Listado de Documentos</title>
-    <style>
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-    </style>
 </head>
 <body>
-    <h1>Listado de Documentos - Colección "Gustos"</h1>
+    <h1>Listado de Documentos</h1>
     
-    <table>
-        <thead>
+    <?php if ($total > 0): ?>
+        <table border="1">
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Gusto</th>
-                <th>Fecha</th>
             </tr>
-        </thead>
-        <tbody>
             <?php foreach ($documentos as $doc): ?>
             <tr>
                 <td><?= $doc['_id'] ?></td>
-                <td><?= $doc['Apellidos'] ?? 'N/A' ?></td>
-                <td><?= $doc['Nombres'] ?? 'N/A' ?></td>
-                <td><?= $doc['Color favorito'] ?? 'N/A' ?></td>
-                <td><?= $doc['Comida favorita'] ?? 'N/A' ?></td>
-                <td><?= $doc['Tipo de literatura y cine'] ?? 'N/A' ?></td>
+                <td><?= $doc['nombre'] ?? 'N/A' ?></td>
+                <td><?= $doc['gusto'] ?? 'N/A' ?></td>
             </tr>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-
-    <p>Total de documentos: <?= $coleccion->countDocuments([]) ?></p>
+        </table>
+        <p><strong>Total: <?= $total ?> documentos</strong></p>
+    <?php else: ?>
+        <p>No hay documentos para mostrar</p>
+    <?php endif; ?>
 </body>
 </html>

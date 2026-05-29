@@ -7,7 +7,7 @@ require 'vendor/autoload.php'; // Cargar Composer
 
     $cliente = new MongoDB\Client("mongodb+srv://julianlancheros131_db_user:3Y7ND-mMztikK.S@taller4servidores.oybiloa.mongodb.net/?appName=Taller4Servidores");
     $db = $cliente->Prueba4;	// Nombre de BD
-    $coleccion = $db->Gustos;	//Nombre de la coleccion	
+    $coleccion = $db->gustos;	//Nombre de la coleccion	
     $resultado = $coleccion->insertOne([
         "apellidos" => $_POST["apellidos"],
         "nombres" => $_POST["nombres"],
